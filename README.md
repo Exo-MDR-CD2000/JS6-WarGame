@@ -18,7 +18,7 @@ Jokers are not included in the deck and the values go from 2-14. Card faces are 
 
 Clone the repo and open a live server in VS code. You can play the game in VS terminal or through the browser. Alternatively, you can click on the deployed link to the right or down below:
 
-- [Deployed Link](WIP)
+- [Deployed Link](https://exo-mdr-cd2000.github.io/JS6-WarGame/)
 
 ## Link(s)
 
