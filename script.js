@@ -58,18 +58,54 @@ class Deck {
 
 // player class
 
+// two players will be playing the game. Each player will have a name, a hand of cards, and a score.
+// the game class will create two player instances and manage the game flow.
 
+class Player {
+    constructor(name) {
+        this.name = name; // player's name
+        this.hand = []; // player's hand
+        this.score = 0; // player's score
+    }
 
+    playCard() {
+        return this.hand.shift(); // Remove and return the top card from the player's hand. shift method removes the first element from an array and returns it
+    }
 
-
-
-
-
+    incrementScore() {
+        this.score += 1; // increments the player's score by 1
+    }
+}
 
 
 
 
 // game class
+
+class Game {
+    constructor() {
+        this.player1 = new Player("Player 1"); // creates player 1 instance
+        this.player2 = new Player("Player 2"); // creates player 2 instance
+        this.deck = new Deck(); // creates a deck instance. calls the deck class to create a deck of cards
+    }
+
+
+    // players are created and decks are made. Now we need to start the game by shuffling the deck and dealing the cards to the players.
+
+
+    startGame() {
+        this.deck.shuffle(); // shuffle the deck of cards
+        const [hand1, hand2] = this.deck.deal(); // deal the cards to the players
+        this.player1.hand = hand1; // set player 1's hand
+        this.player2.hand = hand2; // set player 2's hand
+    };
+
+
+
+
+
+
+}
 
 
 
