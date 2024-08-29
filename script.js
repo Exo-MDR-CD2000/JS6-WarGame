@@ -104,28 +104,7 @@ class Game {
 
     // cards have been dealt to player's hands. implement game logic next.
 
-    /*
-        playRoundOld() {
-            for (let i = 0; i < 26; i++) { // 26 rounds of the game since each player has 26 cards
-                const card1 = this.player1.playCard(); // player 1 plays a card
-                const card2 = this.player2.playCard(); // player 2 plays a card
     
-                console.log(`${this.player1.name} plays ${card1.value} of ${card1.suit}`); // log player 1's card
-                console.log(`${this.player2.name} plays ${card2.value} of ${card2.suit}`); // log player 2's card
-    
-                if (card1.value > card2.value) { // if player 1's card is greater than player 2's card
-                    console.log(`${this.player1.name} wins the round!`); // player 1 wins the round
-                    this.player1.incrementScore(); // increment player 1's score
-                } else if (card1.value < card2.value) { // if player 2's card is greater than player 1's card
-                    console.log(`${this.player2.name} wins the round!`); // player 2 wins the round
-                    this.player2.incrementScore(); // increment player 2's score
-                } else { // if both cards are equal
-                    console.log("It's a tie!"); // it's a tie
-                }
-            }
-        };
-    */
-
     // This function is a bit simpler as we are comparing the values of the cards directly. The getValue method in the Card class makes this possible.
     playRoundNew() {
         for (let i = 0; i < 26; i++) { // 26 rounds of the game since each player has 26 cards
