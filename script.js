@@ -170,14 +170,15 @@ class Game {
 
 
     // the game is ready to be played. We need to start the game by calling the startGame method and then play the rounds and determine the winner.
+    playGame() {
+        this.startGame(); // start the game
+        this.playRoundNew(); // play the rounds
+        this.playerWinner(); // determine the winner
+    };
+    
 };
-
-
-
-
-
 
 
 // Start the game
 const game = new Game(); // create a new game instance
-game.startGame(); // this will deal the cards to the players and start the game loop
+game.playGame(); // this will deal the cards to the players and start the game loop
