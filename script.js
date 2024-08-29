@@ -1,16 +1,17 @@
-// Consider classes such as: Card, Deck, Player, as well as what properties and methods they may include.
-
-
 
 // card class
 
 class Card {
-    constructor(suit, value) {
+    constructor(suit, value, name = null) { // the constructor takes in the suit, value, and name of the card (name is optional) name is set to null by default to handle the case where the card does not have a name
         this.suit = suit;
         this.value = value;
+        this.name = name;
     }
     getValue() {
         return this.value; // this will simplify the playRound method in the Game class because we can compare the values of the cards directly
+    }
+    getName() {
+        return this.name ? this.name : this.value; // this will return the name of the card if it exists, otherwise it will return the value of the card
     }
 }
 
@@ -27,11 +28,13 @@ class Deck {
     createDeck() {
         const suits = [`Spades 🗡️`, `Hearts ❤️`, `Diamonds 💎`, `Clubs 🍀`]; // defines the card suites
         const values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]; // 11=Jack, 12=Queen, 13=King, 14=Ace
+        const names = {11: `Jack`, 12: `Queen`, 13: `King`, 14: `Ace`}; // names of the cards
 
 
         for (let suit of suits) { // for each suit
             for (let value of values) { // for each value
-                this.cards.push(new Card(suit, value)); // create a new card object and add it to the deck 
+                const name = names[value] || null; // get the name of the card. if the card does not have a name, set it to null
+                this.cards.push(new Card(suit, value, name)); // create a new card object and add it to the deck.
             }
         }
     }
@@ -50,11 +53,6 @@ class Deck {
     deal() {
         return [this.cards.slice(0, 26), this.cards.slice(26, 52)]; // returns two arrays of 26 cards each (basically cut the deck in half using slice method then deal the cards)
     };
-
-
-
-
-
 
 };
 
@@ -136,8 +134,8 @@ class Game {
             const card1 = this.player1.playCard(); // player 1 plays a card
             const card2 = this.player2.playCard(); // player 2 plays a card
 
-            console.log(`${this.player1.name} plays ${card1.value} of ${card1.suit}`); // log player 1's card
-            console.log(`${this.player2.name} plays ${card2.value} of ${card2.suit}`); // log player 2's card
+            console.log(`${this.player1.name} plays ${card1.getName()} of ${card1.suit}`); // log player 1's card
+            console.log(`${this.player2.name} plays ${card2.getName()} of ${card2.suit}`); // log player 2's card
 
             if (card1.getValue() > card2.value) { // compare the values of the cards using the getValue method
                 console.log(`${this.player1.name} wins the round!`); // logs player 1 wins the round
