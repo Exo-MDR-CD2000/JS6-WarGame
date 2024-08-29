@@ -162,21 +162,23 @@ class Game {
         let winnerMessage; // create a variable to store the winner message
         if (this.player1.score > this.player2.score) { // compares player 1's score to player 2's score
             winnerMessage = `${this.player1.name} wins the game!`; // player 1 wins the game
+            console.log(`${this.player1.name} wins the game!`); // log the winner
         } else if (this.player1.score < this.player2.score) { // compares player 2's score to player 1's score
             winnerMessage = `${this.player2.name} wins the game!`; // player 2 wins the game
+            console.log(`${this.player2.name} wins the game!`); // log the winner
         } else {
             winnerMessage = `The game is a tie!`; // the game is a tie
+            console.log(`The game is a tie!`); // log the tie
         }
 
         const finalMessage = "-- Final Results --\n\n" +
         this.player1.name + " scored: " + this.player1.score + "\n" +
         this.player2.name + " scored: " + this.player2.score + "\n\n" +
-        winnerMessage;
+        winnerMessage; // concatenate the final message
 
         // display final message results
-        alert(finalMessage);
-
         console.log(`Note: 11=Jack, 12=Queen, 13=King, 14=Ace`); // log the values of the cards
+        alert(finalMessage);
     };
 
 
