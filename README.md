@@ -11,7 +11,9 @@ The goal was to recreate the game of War using Javascript OOP concepts and then 
     - Ties result in zero points for both Players.
 4. After all cards have been played, display the score and declare the winner.
 
-Jokers are not included in the deck and the values go from 2-14. Card faces are implemented for Jacks, Kings, Queens, and Aces. The player names are pre-assigned and cannot be changed for simplicity sake. Upon loading the page, the browser will show an alert pop up displaying the results of the game and the winner. Viewing the browser console will show each round, each card dealt, and the winner for each round. A new game can be created by refreshing the browser page. One of the more challenging aspects was understanding a method for shuffling the deck. I cam across the Fisher-Yates shuffle and some examples on how to implement it with JS.
+Jokers are not included in the deck and the values go from 2-14. Card faces are implemented for Jacks, Kings, Queens, and Aces. The player names are pre-assigned and cannot be changed for simplicity sake. Note how the rules state that no points are awarded when War is initiated (when players play two cards of the same value). This version of the game does not go through the typical War rules of dealing extra cards when War is initiated. 
+
+Upon loading the page, the browser will show an alert pop up displaying the results of the game and the winner. Viewing the browser console will show each round, each card dealt, and the winner for each round. A new game can be created by refreshing the browser page. One of the more challenging aspects was understanding a method for shuffling the deck. I cam across the Fisher-Yates shuffle and some examples on how to implement it with JS.
 
 
 ## Usage
