@@ -16,8 +16,8 @@ class Card {
 
 class Deck {
     constructor() {
-        this.cards = [];
-        this.createDeck();
+        this.cards = []; // initialize an empty array to store the cards
+        this.createDeck(); // call the createDeck method to generate the deck of cards
     }
 
     
@@ -26,9 +26,9 @@ class Deck {
         const values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]; // 11=Jack, 12=Queen, 13=King, 14=Ace
 
 
-        for (let suit of suits) {
-            for (let value of values) {
-                this.cards.push(new Card(suit, value));
+        for (let suit of suits) { // for each suit
+            for (let value of values) { // for each value
+                this.cards.push(new Card(suit, value)); // create a new card object and add it to the deck 
             }
         }
     }
@@ -44,7 +44,9 @@ class Deck {
 
 
     // shuffled deck must now be dealt to the players
-    deal() {};
+    deal() {
+        return [this.cards.slice(0, 26), this.cards.slice(26, 52)]; // returns two arrays of 26 cards each (basically cut the deck in half using slice method then deal the cards)
+    };
     
     
     
