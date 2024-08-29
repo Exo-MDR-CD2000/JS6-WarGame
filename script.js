@@ -25,7 +25,7 @@ class Deck {
 
 
     createDeck() {
-        const suits = ["Spades 🗡️", "Hearts ❤️", "Diamonds 💎", "Clubs 🍀"]; // defines the card suites
+        const suits = [`Spades 🗡️`, `Hearts ❤️`, `Diamonds 💎`, `Clubs 🍀`]; // defines the card suites
         const values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]; // 11=Jack, 12=Queen, 13=King, 14=Ace
 
 
@@ -87,8 +87,8 @@ class Player {
 
 class Game {
     constructor() {
-        this.player1 = new Player("Player 1"); // creates player 1 instance
-        this.player2 = new Player("Player 2"); // creates player 2 instance
+        this.player1 = new Player(`Player 1`); // creates player 1 instance
+        this.player2 = new Player(`Player 2`); // creates player 2 instance
         this.deck = new Deck(); // creates a deck instance. calls the deck class to create a deck of cards
     }
 
@@ -131,6 +131,8 @@ class Game {
     // This function is a bit simpler as we are comparing the values of the cards directly. The getValue method in the Card class makes this possible.
     playRoundNew() {
         for (let i = 0; i < 26; i++) { // 26 rounds of the game since each player has 26 cards
+            console.log(`*Round ${i + 1}*`); // log the round number
+            
             const card1 = this.player1.playCard(); // player 1 plays a card
             const card2 = this.player2.playCard(); // player 2 plays a card
 
@@ -144,13 +146,16 @@ class Game {
                 console.log(`${this.player2.name} wins the round!`); // player 2 wins the round
                 this.player2.incrementScore(); // increment player 2's score
             } else {
-                console.log("It's a tie!");
+                console.log(`It's a tie!`);
             }
+            console.log(`Current Scores: ${this.player1.name}: ${this.player1.score} | ${this.player2.name}: ${this.player2.score}`); // log the current scores
+            console.log(`------------------------------------------------`); // add a space between each round
         }
     }
 
     // now that the game logic is made, we need to determine a winner after all the rounds are played.
     playerWinner() {
+        console.log(`==================== Final Results ====================`); // log the final results
         console.log(`${this.player1.name} scored: ${this.player1.score}`); // log player 1's score
         console.log(`${this.player2.name} scored: ${this.player2.score}`); // log player 2's score
 
@@ -162,9 +167,10 @@ class Game {
         } else if (this.player1.score < this.player2.score) { // compares player 2's score to player 1's score
             console.log(`${this.player2.name} wins the game!`); // player 2 wins the game
         } else {
-            console.log("The game is a tie!"); // the game is a tie
+            console.log(`The game is a tie!`); // the game is a tie
         }
 
+        console.log(`Note: 11=Jack, 12=Queen, 13=King, 14=Ace`); // log the values of the cards
     };
 
 
