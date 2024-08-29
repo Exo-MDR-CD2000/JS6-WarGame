@@ -3,6 +3,16 @@ A game of war in browser console
 
 ## Description
 
+The goal was to recreate the game War using Javascript OOP concepts and then have the game be played out automatically in the broswer console. The rules are a modified version of game with the following rules below:
+
+1. Deal 26 Cards to each Player from a Deck of 52 cards.
+2. Iterate through the turns where each Player plays a Card.
+3. The Player who played the higher card is awarded a point.
+    - Ties result in zero points for both Players.
+4. After all cards have been played, display the score and declare the winner.
+
+Jokers are not included in the deck and the values go from 2-14.
+
 
 ## Usage
 
