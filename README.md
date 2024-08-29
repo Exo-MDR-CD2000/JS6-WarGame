@@ -27,3 +27,5 @@ Clone the repo and open a live server in VS code. Alternatively, you can click o
 ## Credits
 
 - Independent research and Promineo Bootstrap videos.
+- [Stack Overflow - How to Fisher-Yates shuffle a JavaScript array?](https://stackoverflow.com/questions/59810241/how-to-fisher-yates-shuffle-a-javascript-array)
+- [Fisher Yates Shuffle](https://medium.com/@omar.rashid2/fisher-yates-shuffle-a2aa15578d2f)
